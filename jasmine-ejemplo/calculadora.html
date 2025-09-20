@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora SENA - Proyecto Jasmine JS</title>
+    <link rel="stylesheet" href="css/calculadora.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧮 Calculadora SENA</h1>
+            <p>Proyecto Jasmine JS - Xiomara García</p>
+        </div>
+
+        <!-- Operaciones Básicas -->
+        <div class="calculator-section">
+            <h3 class="section-title">➕ Operaciones Básicas</h3>
+            
+            <div class="input-group">
+                <label>Número A:</label>
+                <input type="number" id="numA" placeholder="Ingresa el primer número" value="0">
+            </div>
+            
+            <div class="input-group">
+                <label>Número B:</label>
+                <input type="number" id="numB" placeholder="Ingresa el segundo número" value="0">
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="calcular('sumar')">➕ Sumar</button>
+                <button class="btn btn-primary" onclick="calcular('restar')">➖ Restar</button>
+                <button class="btn btn-primary" onclick="calcular('multiplicar')">✖️ Multiplicar</button>
+                <button class="btn btn-primary" onclick="calcular('dividir')">➗ Dividir</button>
+            </div>
+            
+            <div id="resultado-basicas" class="result neutral">
+                Resultado aparecerá aquí...
+            </div>
+        </div>
+
+        <!-- Funciones Especiales -->
+        <div class="calculator-section">
+            <h3 class="section-title">🔢 Funciones Especiales</h3>
+            
+            <div class="input-group">
+                <label>Número:</label>
+                <input type="number" id="numEspecial" placeholder="Ingresa un número" value="5">
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-secondary" onclick="verificarParImpar()">🎯 Par/Impar</button>
+                <button class="btn btn-secondary" onclick="calcularFactorial()">❗ Factorial</button>
+            </div>
+            
+            <div id="resultado-especiales" class="result neutral">
+                Resultado de funciones especiales...
+            </div>
+        </div>
+
+        <!-- Potencias -->
+        <div class="calculator-section">
+            <h3 class="section-title">⚡ Potencias</h3>
+            
+            <div class="input-group">
+                <label>Base:</label>
+                <input type="number" id="base" placeholder="Base" value="2">
+            </div>
+            
+            <div class="input-group">
+                <label>Exponente:</label>
+                <input type="number" id="exponente" placeholder="Exponente" value="3">
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="calcularPotencia()">⚡ Calcular Potencia</button>
+                <button class="btn btn-secondary" onclick="limpiarCampos()">🧹 Limpiar Todo</button>
+            </div>
+            
+            <div id="resultado-potencia" class="result neutral">
+                Resultado de la potencia...
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>SENA Colombia - Sexto Trimestre</strong></p>
+            <p>Investigación Jasmine JS - Calidad de Software</p>
+            <a href="SpecRunner.html" class="test-link">🧪 Ver Pruebas de Jasmine</a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="src/calculadora.js"></script>
+    <script src="js/calculadora.js"></script>
+</body>
+</html>

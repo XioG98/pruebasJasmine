@@ -1,0 +1,26 @@
+{
+  "name": "jasmine-ejemplo",
+  "version": "1.0.0",
+  "description": "Ejemplo práctico de Jasmine JS para Actividad Pruebas",
+  "main": "src/calculadora.js",
+  "scripts": {
+    "test": "jasmine",
+    "test:calculadora": "jasmine spec/calculadoraSpec.js",
+    "test:watch": "nodemon --exec 'npm test' --watch src --watch spec"
+  },
+  "keywords": [
+    "jasmine",
+    "testing",
+    "javascript",
+    "calculator"
+  ],
+  "author": "Xiomara Garcia",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine": "^4.5.0",
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

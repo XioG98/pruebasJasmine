@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Completa - Calculadora SENA</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .demo-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .demo-title {
+            color: #333;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+        
+        .demo-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .demo-code {
+            background: #2d3748;
+            color: #68d391;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+        
+        .demo-result {
+            background: #e6fffa;
+            border: 1px solid #38b2ac;
+            color: #2d3748;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .demo-error {
+            background: #fed7d7;
+            border: 1px solid #e53e3e;
+            color: #2d3748;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .navigation {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .nav-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 0 10px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+        
+        .stats {
+            background: #e6fffa;
+            border: 2px solid #38b2ac;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Demostración Completa</h1>
+            <p><strong>Calculadora SENA - Todas las Funciones</strong></p>
+        </div>
+        
+        <div class="navigation">
+            <a href="calculadora.html" class="nav-btn">🧮 Calculadora Interactiva</a>
+            <a href="SpecRunner.html" class="nav-btn">🧪 Ver Pruebas</a>
+        </div>
+        
+        <div class="demo-section">
+            <h3 class="demo-title">➕ Operaciones Básicas</h3>
+            
+            <div class="demo-item">
+                <h4>Suma</h4>
+                <div class="demo-code">calc.sumar(15, 25)</div>
+                <div class="demo-result" id="suma-result">Calculando...</div>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Resta</h4>
+                <div class="demo-code">calc.restar(50, 30)</div>
+                <div class="demo-result" id="resta-result">Calculando...</div>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Multiplicación</h4>
+                <div class="demo-code">calc.multiplicar(8, 7)</div>
+                <div class="demo-result" id="mult-result">Calculando...</div>
+            </div>
+            
+            <div class="demo-item">
+                <h4>División</h4>
+                <div class="demo-code">calc.dividir(84, 12)</div>
+                <div class="demo-result" id="div-result">Calculando...</div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h3 class="demo-title">🔢 Funciones Especiales</h3>
+            
+            <div class="demo-item">
+                <h4>Verificar Par/Impar</h4>
+                <div class="demo-code">calc.esParImpar(42)</div>
+                <div class="demo-result" id="par-result">Calculando...</div>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Factorial</h4>
+                <div class="demo-code">calc.factorial(5)</div>
+                <div class="demo-result" id="fact-result">Calculando...</div>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Potencia</h4>
+                <div class="demo-code">calc.potencia(3, 4)</div>
+                <div class="demo-result" id="pot-result">Calculando...</div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h3 class="demo-title">⚠️ Manejo de Errores</h3>
+            
+            <div class="demo-item">
+                <h4>División por Cero</h4>
+                <div class="demo-code">calc.dividir(10, 0)</div>
+                <div class="demo-error" id="error1-result">Calculando...</div>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Parámetros Inválidos</h4>
+                <div class="demo-code">calc.sumar("texto", 5)</div>
+                <div class="demo-error" id="error2-result">Calculando...</div>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Factorial de Número Negativo</h4>
+                <div class="demo-code">calc.factorial(-3)</div>
+                <div class="demo-error" id="error3-result">Calculando...</div>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <h3>📊 Estadísticas del Proyecto</h3>
+            <p><strong>Total de Funciones:</strong> 7</p>
+            <p><strong>Total de Pruebas:</strong> 25 (solo calculadora)</p>
+            <p><strong>Cobertura:</strong> Todas las funciones probadas ✅</p>
+            <p><strong>Estado:</strong> <span style="color: #38a169;">Todas las pruebas pasan</span></p>
+        </div>
+    </div>
+    
+    <script src="src/calculadora.js"></script>
+    <script>
+        // Crear instancia de la calculadora
+        const calc = new Calculadora();
+        
+        // Ejecutar demostraciones cuando carga la página
+        window.addEventListener('load', function() {
+            // Operaciones básicas
+            document.getElementById('suma-result').textContent = `Resultado: ${calc.sumar(15, 25)}`;
+            document.getElementById('resta-result').textContent = `Resultado: ${calc.restar(50, 30)}`;
+            document.getElementById('mult-result').textContent = `Resultado: ${calc.multiplicar(8, 7)}`;
+            document.getElementById('div-result').textContent = `Resultado: ${calc.dividir(84, 12)}`;
+            
+            // Funciones especiales
+            document.getElementById('par-result').textContent = `Resultado: ${calc.esParImpar(42)}`;
+            document.getElementById('fact-result').textContent = `Resultado: ${calc.factorial(5)}`;
+            document.getElementById('pot-result').textContent = `Resultado: ${calc.potencia(3, 4)}`;
+            
+            // Manejo de errores
+            try {
+                calc.dividir(10, 0);
+            } catch (error) {
+                document.getElementById('error1-result').textContent = `Error: ${error.message}`;
+            }
+            
+            try {
+                calc.sumar("texto", 5);
+            } catch (error) {
+                document.getElementById('error2-result').textContent = `Error: ${error.message}`;
+            }
+            
+            try {
+                calc.factorial(-3);
+            } catch (error) {
+                document.getElementById('error3-result').textContent = `Error: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>
